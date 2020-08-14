@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VotacionesActivity"></activity>
+        <activity android:name=".Resultados_parciales"></activity>
+        <activity android:name=".ActualizarDatos" />
+        <activity android:name=".ActualizacionPass" />
+        <activity android:name=".VotacionesActivity" />
         <activity android:name=".VotoDecisivoActivity" />
         <activity android:name=".VotoCerradoActivity" />
         <activity android:name=".PerfilActivity" />
