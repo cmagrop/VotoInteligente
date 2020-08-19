@@ -46,6 +46,17 @@ interface ApiInterface {
     fun pregunta_por_votacion(@Path("nro_votacion") nro_votacion: Int):
             Call<List<PreguntaVotacion>>
 
+    //Registrar opción de voto pregunta
+
+    @FormUrlEncoded
+    @POST("/index.php/votacion/respuestavotacion")
+    fun votacion_respuesta(
+        @Field("id_respuesta") id_respuesta: Integer?,
+        @Field("apruebo") apruebo: Integer,
+        @Field("rechazo") rechazo: Integer?,
+        @Field("abstengo") abstengo: Integer?
+
+    ): Call<List<RespuestaVotacionModel>>
 
 
 
