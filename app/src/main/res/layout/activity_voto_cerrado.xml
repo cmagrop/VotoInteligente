@@ -3,9 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".VotoCerradoActivity"
-    android:background="#332859">
+    tools:context=".VotoCerradoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,20 +21,23 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/roboto"
                 android:gravity="center"
                 android:text="Emisión de tu voto"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="30dp"></TextView>
+
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
                 android:fontFamily="@font/roboto"
                 android:gravity="center"
                 android:text="Votación sobre ordenanza municipal N° 234 de julio del 2020"
@@ -54,13 +55,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_marginHorizontal="20dp"
                 android:fontFamily="@font/roboto"
                 android:gravity="center"
                 android:text="Sobre la licitación del plan de seguridad comunal, ante lo expuesto, usted:"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="26dp"></TextView>
+                android:textSize="20dp"></TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -70,27 +71,25 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/opcion_votoChk_container"
+                android:id="@+id/opcion_voto_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:background="@drawable/border_redondeado"
                 android:gravity="center_vertical"
                 android:orientation="vertical"
-                android:paddingHorizontal="70dp"
-                android:background="@drawable/border_redondeado">
+                android:paddingHorizontal="70dp">
 
                 <CheckBox
                     android:id="@+id/apruebo_chk"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginVertical="10dp"
+                android:layout_marginVertical="10dp"
+                    android:buttonTint="#FFFFFF"
                     android:fontFamily="@font/roboto"
                     android:text="APRUEBO"
-                    android:textColor="#FFFFFF"
-                    android:buttonTint="#FFFFFF"
-                    ></CheckBox>
+                    android:textColor="#FFFFFF"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/rechazo_chk"
@@ -98,11 +97,10 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginVertical="10dp"
+                    android:buttonTint="#FFFFFF"
                     android:fontFamily="@font/roboto"
                     android:text="RECHAZO"
-                    android:textColor="#FFFFFF"
-                    android:buttonTint="#FFFFFF"></CheckBox>
+                    android:textColor="#FFFFFF"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/abstengo_chk"
@@ -111,10 +109,10 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginVertical="10dp"
+                    android:buttonTint="#FFFFFF"
                     android:fontFamily="@font/roboto"
                     android:text="ABSTENGO"
-                    android:textColor="#FFFFFF"
-                    android:buttonTint="#FFFFFF"></CheckBox>
+                    android:textColor="#FFFFFF"></CheckBox>
 
             </LinearLayout>
         </LinearLayout>
@@ -130,7 +128,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
                 android:background="@drawable/button_redondeado"
                 android:elevation="10dp"
                 android:fontFamily="@font/roboto"
