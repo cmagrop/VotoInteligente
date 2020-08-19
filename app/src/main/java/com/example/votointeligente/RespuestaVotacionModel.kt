@@ -30,7 +30,6 @@ data class RespuestaVotacionModel (
     val blanco: Integer
 
 
-
 )
 
 

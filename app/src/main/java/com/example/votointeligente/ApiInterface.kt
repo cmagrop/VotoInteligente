@@ -59,6 +59,4 @@ interface ApiInterface {
     ): Call<List<RespuestaVotacionModel>>
 
 
-
-
 }
