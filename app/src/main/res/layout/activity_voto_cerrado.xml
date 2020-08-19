@@ -70,6 +70,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/opcion_votoChk_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -79,7 +80,7 @@
                 android:background="@drawable/border_redondeado">
 
                 <CheckBox
-                    android:id="@+id/apruebo"
+                    android:id="@+id/apruebo_chk"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -92,7 +93,7 @@
                     ></CheckBox>
 
                 <CheckBox
-                    android:id="@+id/rechazo"
+                    android:id="@+id/rechazo_chk"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -104,7 +105,7 @@
                     android:buttonTint="#FFFFFF"></CheckBox>
 
                 <CheckBox
-                    android:id="@+id/abstengo"
+                    android:id="@+id/abstengo_chk"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -125,6 +126,7 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/emitir_voto_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

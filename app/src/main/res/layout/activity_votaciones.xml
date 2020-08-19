@@ -9,6 +9,7 @@
     tools:context=".VotacionesActivity">
 
     <LinearLayout
+        android:id="@+id/votacion_disponible_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.5"
@@ -25,6 +26,7 @@
             android:textSize="30dp" />
 
         <LinearLayout
+            android:id="@+id/votacion_disponible01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
@@ -50,6 +52,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/votacion_disponible02"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
@@ -76,6 +79,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/votacion_disponible03"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
@@ -104,6 +108,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/votacion_noDisponible_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.5"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_base"
     android:orientation="vertical"
-    android:weightSum="">
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -86,7 +86,7 @@
                 android:textColor="#FFFFFF" />
 
             <TextView
-                android:id="@+id/login_text_recup_contr"
+                android:id="@+id/login_text_recup_pass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -125,7 +125,7 @@
                 android:layout_marginTop="20dp"
                 android:background="#fff"
                 android:scaleType="fitXY"
-                android:src="@drawable/SERVEL" />
+                android:src="@drawable/servel" />
 
         </LinearLayout>
 

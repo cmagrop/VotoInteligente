@@ -4,15 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_base"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
         android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:layout_margin="15dp">
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            android:background="@drawable/login_icono"/>
+            android:background="@drawable/login_icono" />
 
     </LinearLayout>
 
@@ -45,6 +44,7 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/actualizar_info_perfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="60dp"
@@ -59,32 +59,32 @@
 
 
         <Button
+            android:id="@+id/cambiar_pass_perfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="60dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/button_redondeado"
-            android:text="Cambiar contraseña"
-            android:paddingVertical="20dp"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:elevation="10dp"
             android:fontFamily="@font/roboto"
-            android:elevation="10dp"/>
+            android:paddingVertical="20dp"
+            android:text="Cambiar contraseña"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
 
         <Button
-
+            android:id="@+id/votacion_disponible_perfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="60dp"
             android:layout_marginTop="30dp"
+            android:background="@drawable/button_redondeado"
+            android:elevation="10dp"
+            android:fontFamily="@font/roboto"
+            android:paddingVertical="20dp"
             android:text="Votaciones disponibles"
             android:textColor="#FFFFFF"
-            android:background="@drawable/button_redondeado"
-            android:paddingVertical="20dp"
-            android:textSize="18sp"
-            android:fontFamily="@font/roboto"
-            android:elevation="10dp"
-            />
+            android:textSize="18sp" />
 
     </LinearLayout>
 

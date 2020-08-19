@@ -57,6 +57,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/opcion_votoRound_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -102,6 +103,7 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/emitir_voto_radioButton"
                 android:background="@drawable/button_redondeado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
