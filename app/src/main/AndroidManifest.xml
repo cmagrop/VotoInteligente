@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".VotacionesActivity"></activity>
-        <activity android:name=".VotoCerradoMainActivity" />
+        <activity android:name=".VotoDecisivoActivity" />
+        <activity android:name=".VotoCerradoActivity" />
         <activity android:name=".PerfilActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

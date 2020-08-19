@@ -1,74 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_layout"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#aaa"> <!-- el color es para que no se vea tan blanco -->
-    <!-- este es un comentario en xml o html-->
+    android:background="@drawable/background_base"
+    android:orientation="vertical"
+    android:weightSum="">
 
-    <!-- un primer layout para las imagenes-->
     <LinearLayout
-        android:layout_marginTop="@dimen/tam_foto"
-        android:gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageView
-            android:id="@+id/login_img1"
-            android:layout_marginRight="@dimen/tam_foto"
-            android:background="#fff"
-            android:layout_width="@dimen/tam_foto"
-            android:layout_height="@dimen/tam_foto"/>
-        <ImageView
-            android:id="@+id/login_img2"
-            android:background="#fff"
-            android:layout_width="@dimen/tam_foto"
-            android:layout_height="@dimen/tam_foto"/>
-
-    </LinearLayout>
-
-    <!-- un segundo layout para los campos de entrada -->
-    <LinearLayout
-        android:paddingTop="@dimen/tam_foto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/login_edt_usuario"
-            android:hint="Usuario"
-            android:gravity="center"
-            android:layout_marginHorizontal="30dp"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
-        <EditText
-            android:id="@+id/login_edt_pass"
-            android:hint="contraseña"
-            android:gravity="center"
-            android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+           <!-- <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:fontFamily="@font/roboto"
+                android:textColor="#FFFFFF"
+                android:textSize="40dp"
+                android:gravity="center"
+                android:layout_marginTop="20dp"/>-->
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/login_icono" />
+
+            <EditText
+                android:id="@+id/login_edt_usuario"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="40dp"
+                android:background="@drawable/edittext_redondeado"
+                android:drawableLeft="@drawable/ic_action_nameaaccount"
+                android:drawablePadding="50dp"
+                android:hint="Ingrese su RUT"
+                android:paddingHorizontal="20dp"
+                android:textAlignment="textStart"
+                android:textColorHint="#50FFFFFF"
+                tools:ignore="RtlCompat"
+                android:elevation="20dp"/>
+
+            <EditText
+                android:id="@+id/login_edt_pass"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edittext_redondeado"
+                android:drawableLeft="@drawable/ic_action_namepass"
+                android:drawablePadding="50dp"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:paddingHorizontal="20dp"
+                android:textAlignment="textStart"
+                android:textColorHint="#50FFFFFF"
+                tools:ignore="RtlCompat"
+                android:elevation="20dp"/>
+
+            <Button
+                android:id="@+id/login_btn_ingresar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/button_redondeado"
+                android:onClick="capturaLogin"
+                android:paddingHorizontal="20dp"
+                android:text="Ingresar"
+                android:textColor="#FFFFFF"
+                android:elevation="20dp"/>
+
+            <TextView
+                android:id="@+id/login_text_recup_contr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:clickable="true"
+                android:text="@string/rec_contr"
+                android:textColor="#3D49C3"
+                android:textSize="20sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
-        <Button
-            android:id="@+id/login_btn_ingresar"
-            android:layout_marginTop="60dp"
-            android:layout_gravity="center"
-            android:text="Ingresar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="capturalogin"/>
-        <TextView
-            android:id="@+id/login_text_recup_contr"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/rec_contr"
-            android:clickable="true"
-            android:textColor="#004"
-            android:textSize="20sp"
-            />
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/login_img1"
+                android:layout_width="@dimen/tam_foto"
+                android:layout_height="@dimen/tam_foto"
+                android:layout_marginRight="@dimen/tam_foto"
+                android:background="#fff"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/AMUCH"
+                android:padding="10dp"/>
+
+            <ImageView
+                android:id="@+id/login_img2"
+                android:layout_width="@dimen/tam_foto"
+                android:layout_height="@dimen/tam_foto"
+                android:background="#fff"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/SERVEL"
+                android:scaleType="fitXY"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
