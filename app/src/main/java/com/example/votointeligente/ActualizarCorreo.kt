@@ -3,9 +3,9 @@ package com.example.votointeligente
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class ActualizarDatos : AppCompatActivity() {
+class ActualizarCorreo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_actualizar_datos)
+        setContentView(R.layout.activity_actualizar_correo)
     }
 }
