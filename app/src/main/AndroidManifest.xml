@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".Resultados_parciales"></activity>
-        <activity android:name=".ActualizarDatos" />
+        <activity android:name=".ActualizarCorreo" />
         <activity android:name=".ActualizacionPass" />
         <activity android:name=".VotacionesActivity" />
         <activity android:name=".VotoDecisivoActivity" />
