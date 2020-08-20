@@ -5,13 +5,11 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_base"
     android:orientation="vertical"
-    android:weightSum="9"
     tools:context=".ActualizacionPass">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
@@ -22,21 +20,19 @@
             android:layout_marginBottom="10dp"
             android:text="Actualización de Contraseña"
             android:textColor="#FFFFFF"
-            android:textSize="26dp"
-            />
+            android:textSize="26dp" />
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center|bottom|center_vertical"
-            android:src="@drawable/actualizar_pass"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/actualizar_pass" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
@@ -46,7 +42,7 @@
 
             android:text="Ingrese su nueva contraseña"
             android:textColor="#FFFFFF"
-            android:textSize="15dp" />
+            android:textSize="20dp" />
 
         <EditText
             android:id="@+id/actualizar_pass_perfil"
@@ -58,18 +54,18 @@
             android:gravity="center"
             android:hint="Ingrese contraseña"
             android:padding="5dp"
+            android:textColor="#FFFFFF"
             android:textColorHint="#686868"
-            android:textSize="20dp"
-            android:textColor="#FFFFFF"/>
+            android:textSize="20dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:text="Ingrese nuevamente su contraseña"
             android:textColor="#FFFFFF"
-            android:textSize="15dp"
-            android:layout_marginTop="20dp"/>
+            android:textSize="20dp" />
 
         <EditText
             android:id="@+id/confirm_actualizar_pass_perfil"
@@ -80,29 +76,23 @@
             android:background="@drawable/edittext_redondeado"
             android:gravity="center"
             android:hint="Ingrese contraseña"
+            android:inputType="textPassword"
             android:padding="5dp"
+            android:textColor="#FFFFFF"
             android:textColorHint="#686868"
-            android:textSize="20dp"
-            android:textColor="#FFFFFF"/>
+            android:textSize="20dp" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3"
-        android:orientation="vertical">
 
         <Button
             android:id="@+id/guardar_cambios_pass_perfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_redondeado"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/button_redondeado"
             android:padding="10dp"
             android:text="Guardar cambios"
             android:textColor="#FFFFFF"
-            android:textSize="10dp"/>
+            android:textSize="15dp" />
     </LinearLayout>
 </LinearLayout>
