@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="60dp"
             android:layout_marginTop="30dp"
-            android:text="Votaciones disponibles"
+            android:text="Votaciones"
             android:textColor="#FFFFFF"
             android:background="@drawable/button_redondeado"
             android:paddingVertical="20dp"
