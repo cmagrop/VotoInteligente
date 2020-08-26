@@ -47,65 +47,38 @@ class MainActivity : AppCompatActivity() {
         Data()
     }
 
-    private fun Data()
-
-    {
-        val call: Call<List<UsuarioModel>> =ApiClient.getClient.validar_usuario(user,pass)
+    private fun Data() {
+        val call: Call<List<UsuarioModel>> = ApiClient.getClient.validar_usuario(user, pass)
 
         call.enqueue(
-         object : Callback<List<UsuarioModel>>
-         {
-             override fun onFailure(call: Call<List<UsuarioModel>>, t: Throwable) {
+            object : Callback<List<UsuarioModel>> {
+                override fun onFailure(call: Call<List<UsuarioModel>>, t: Throwable) {
 
-                     if(t.message!=null)
-
-                     {
-                         val mensaje = t.message
+                    if (t.message != null) {
+                        val mensaje = t.message
 
 
+                    }
 
-                     }
+                }
 
-             }
+                override fun onResponse(
+                    call: Call<List<UsuarioModel>>,
+                    response: Response<List<UsuarioModel>>
+                ) {
 
-             override fun onResponse(
-                 call: Call<List<UsuarioModel>>,
-                 response: Response<List<UsuarioModel>>
-             ) {
-
-                 loginList.addAll(response!!.body()!!)
-                 val exception : HttpException= HttpException(response)
-                 println(exception.code())
-
+                    loginList.addAll(response!!.body()!!)
+                    val exception: HttpException = HttpException(response)
+                    println(exception.code())
 
 
+                }
 
-             }
 
-
-         }
+            }
 
         )
 
-
-
-
     }
-    fun capturaLogin(v: View){
-        //creacion de objeto usuario y conexion(?) con el campo en el xml
-        val usuario=findViewById<EditText>(R.id.login_edt_usuario)
-        val passwrod=findViewById<EditText>(R.id.login_edt_pass)
-        //conversion del campo EditText a string mediante el objeto creado
-        val user=usuario.text.toString()
-        val pass=passwrod.text.toString()
-        println("\nuser: "+user+"\npass: "+pass)
-        if (user.isEmpty())
-            Toast.makeText(this,"Usuario invalido",Toast.LENGTH_LONG).show()
-        else
-            Toast.makeText(this,"Usuario correcto",Toast.LENGTH_LONG).show()
-        if (pass.isEmpty())
-            Toast.makeText(this,"Contraseña incorrecta",Toast.LENGTH_LONG).show()
-        else
-            Toast.makeText(this,"Contraseña valida",Toast.LENGTH_SHORT).show()
-    }
+
 }
