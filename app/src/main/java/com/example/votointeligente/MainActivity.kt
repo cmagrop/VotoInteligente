@@ -1,5 +1,6 @@
 package com.example.votointeligente
 
+import android.content.Intent
 import android.os.Bundle
 
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +29,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun capturaLogin(v:View){
+        val int = Intent(this, Resultados_parciales::class.java)
+        startActivity(int)
+    }
+    fun capturaLogin2(v:View){
         //creacion de objeto usuario y conexion(?) con el campo en el xml
         usuario=findViewById<EditText>(R.id.login_edt_usuario)
         passwrod=findViewById<EditText>(R.id.login_edt_pass)
@@ -56,12 +61,8 @@ class MainActivity : AppCompatActivity() {
 
                     if (t.message != null) {
                         val mensaje = t.message
-
-
                     }
-
                 }
-
                 override fun onResponse(
                     call: Call<List<UsuarioModel>>,
                     response: Response<List<UsuarioModel>>
@@ -73,12 +74,7 @@ class MainActivity : AppCompatActivity() {
 
 
                 }
-
-
             }
-
         )
-
     }
-
 }
