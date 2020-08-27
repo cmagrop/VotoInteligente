@@ -7,27 +7,27 @@ data class RespuestaVotacionModel (
 
     @Expose
     @SerializedName("id_respuesta")
-    val id_respuesta: Integer,
+    val id_respuesta: Int,
 
     @Expose
     @SerializedName("apruebo")
-    val apruebo: Integer,
+    val apruebo: Int,
 
     @Expose
     @SerializedName("rechazo")
-    val rechazo: Integer,
+    val rechazo: Int,
 
     @Expose
     @SerializedName("abstengo")
-    val abstengo: Integer,
+    val abstengo: Int,
 
     @Expose
     @SerializedName("nulo")
-    val nulo: Integer,
+    val nulo: Int,
 
     @Expose
     @SerializedName("blanco")
-    val blanco: Integer
+    val blanco: Int
 
 
 )

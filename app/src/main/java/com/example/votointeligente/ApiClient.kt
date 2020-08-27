@@ -10,7 +10,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
 
-    var BASE_URL:String="http://localhost:8888/VotoRest/"
+    var BASE_URL:String="https://www.christianonline.cl/voto_rest/"
+
     val getClient: ApiInterface //pendiente
         get() {
             val gson = GsonBuilder().setLenient().create()

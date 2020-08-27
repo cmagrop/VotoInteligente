@@ -1,5 +1,6 @@
 package com.example.votointeligente
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
@@ -27,6 +28,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun capturaLogin(v:View){
+        val int = Intent(this, Resultados_parciales::class.java)
+        startActivity(int)
+    }
+    fun capturaLogin2(v:View){
+
         //creacion de objeto usuario y conexion(?) con el campo en el xml
         usuario=findViewById<EditText>(R.id.login_edt_usuario)
         passwrod=findViewById<EditText>(R.id.login_edt_pass)
@@ -42,20 +48,21 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"Contraseña inválida ",Toast.LENGTH_LONG).show()
         else
             Toast.makeText(this,"Contraseña válida $pass",Toast.LENGTH_LONG).show()
+
+
+        Data()
     }
 
-    private fun Data()
-
-    {
-        val call: Call<List<UsuarioModel>> =ApiClient.getClient.validar_usuario(user,pass)
+    private fun Data() {
+        val call: Call<List<UsuarioModel>> = ApiClient.getClient.validar_usuario(user, pass)
 
         call.enqueue(
-            object : Callback<List<UsuarioModel>>
-            {
+            object : Callback<List<UsuarioModel>> {
                 override fun onFailure(call: Call<List<UsuarioModel>>, t: Throwable) {
 
-
-
+                    if (t.message != null) {
+                        val mensaje = t.message
+                    }
                 }
 
                 override fun onResponse(
@@ -64,19 +71,14 @@ class MainActivity : AppCompatActivity() {
                 ) {
 
                     loginList.addAll(response!!.body()!!)
-                    val exception : HttpException= HttpException(response)
-                    println(exception.message())
+
+                    val exception: HttpException = HttpException(response)
+                    println(exception.code())
 
 
                 }
-
-
             }
-
         )
-
-
-
 
     }
 }

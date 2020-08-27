@@ -20,13 +20,14 @@ class LoginActivity : AppCompatActivity() {
         val user=usuario.text.toString()
         val pass=passwrod.text.toString()
 
+        println("user: "+user+"\npass: "+pass)
         if (user.isEmpty())
-            Toast.makeText(this,"something something",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Usuario invalido",Toast.LENGTH_LONG).show()
         else
-            Toast.makeText(this,"not something",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Usuario correcto",Toast.LENGTH_LONG).show()
         if (pass.isEmpty())
-            Toast.makeText(this,"something something 2",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Contraseña incorrecta",Toast.LENGTH_LONG).show()
         else
-            Toast.makeText(this,"not something 2",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Contraseña valida",Toast.LENGTH_LONG).show()
     }
 }
