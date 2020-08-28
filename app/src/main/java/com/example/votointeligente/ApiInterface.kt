@@ -17,26 +17,24 @@ interface ApiInterface {
             Call<List<VotacionesModel>>
     //Validaciones de usuario
     @FormUrlEncoded
-    @POST("/index.php/votacion/usuario")
+    @POST("index.php/usuario")
     fun validar_usuario(
         @Field("rut") rut: String?,
         @Field("password") password: String?
     ): Call<List<UsuarioModel>>
 
     @FormUrlEncoded
-    @POST("/index.php/votacion/usuario")
+    @POST("index.php/actualizarpassword")
     fun cambiar_password(
         @Field("rut") rut: String?,
-        @Field("password") password: String?,
         @Field("password_nuevo") password_nuevo: String?
 
     ): Call<List<UsuarioModel>>
 
     @FormUrlEncoded
-    @POST("/index.php/votacion/usuario")
+    @POST("index.php/actualizarcorreo")
     fun cambiar_email(
         @Field("rut") rut: String?,
-        @Field("password") password: String?,
         @Field("email_nuevo") email_nuevo: String?
 
     ): Call<List<UsuarioModel>>
