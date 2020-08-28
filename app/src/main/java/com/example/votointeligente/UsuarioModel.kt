@@ -28,11 +28,11 @@ data class UsuarioModel (
 
     @Expose
     @SerializedName("genero")
-    val genero: Integer,
+    val genero: Int,
 
     @Expose
     @SerializedName("mesas")
-    val mesas: Integer,
+    val mesas: Int,
 
     @Expose
     @SerializedName("f_nacimiento")
@@ -40,7 +40,7 @@ data class UsuarioModel (
 
     @Expose
     @SerializedName("e_civil")
-    val e_civil: Integer,
+    val e_civil: Int,
 
     @Expose
     @SerializedName("email")
@@ -52,11 +52,11 @@ data class UsuarioModel (
 
     @Expose
     @SerializedName("nro_documento")
-    val nro_documento: Integer,
+    val nro_documento: Int,
 
     @Expose
     @SerializedName("es_administrador")
-    val es_administrador: Integer
+    val es_administrador: Int
 
 
 
