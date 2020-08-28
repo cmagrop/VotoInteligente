@@ -7,16 +7,25 @@ import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.utils.ColorTemplate
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.HttpException
+import retrofit2.Response
 import java.util.*
 import kotlin.collections.ArrayList
 
 
 class Resultados_parciales : AppCompatActivity() {
-
+    var resultados= ArrayList<RespuestaVotacionModel>()//crea un ArrayList con los datos de UsuarioModel
+    var dato : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resultados_parciales)
+
+        dato = savedInstanceState!!.getInt("id")
+
+
         //barras()
         circular()
     }
@@ -29,7 +38,7 @@ class Resultados_parciales : AppCompatActivity() {
         lista.add(PieEntry(429.toFloat(), "rechazo"))
         lista.add(PieEntry(125.toFloat(), "blanco"))
         lista.add(PieEntry(232.toFloat(), "nulo"))
-
+        lista.add(PieEntry(20.toFloat(), "abstengo"))
 
         val colors = ArrayList<Int>()
         for (c in ColorTemplate.COLORFUL_COLORS) colors.add(c)
@@ -58,4 +67,32 @@ class Resultados_parciales : AppCompatActivity() {
         grafico.data = BarData(dataSet)
     }
 
+    private fun data(numVotacion : Int) {
+        val call: Call<List<RespuestaVotacionModel>> = ApiClient.getClient.resultados(numVotacion)
+
+        call.enqueue(
+            object : Callback<List<RespuestaVotacionModel>> {
+                override fun onFailure(call: Call<List<RespuestaVotacionModel>>, t: Throwable) {
+
+                    if (t.message != null) {
+                        val mensaje = t.message
+                    }
+                }
+
+                override fun onResponse(
+                    call: Call<List<RespuestaVotacionModel>>,
+                    response: Response<List<RespuestaVotacionModel>>
+                ) {
+
+                    resultados.addAll(response!!.body()!!)
+
+                    val exception: HttpException = HttpException(response)
+                    println(exception.code())
+
+
+                }
+            }
+        )
+
+    }
 }

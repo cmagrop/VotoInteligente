@@ -13,8 +13,7 @@ interface ApiInterface {
     fun listarVotaciones():
             Call<List<VotacionesModel>>
     @POST("/index.php/votacion/")
-    fun votar():
-            Call<List<VotacionesModel>>
+    fun votar():Call<List<VotacionesModel>>
     //Validaciones de usuario
     @FormUrlEncoded
     @POST("index.php/usuario")
@@ -41,8 +40,9 @@ interface ApiInterface {
 
     //Pregunta y Votacion
     @GET("/index.php/votacion/preguntavotacion/{nro_votacion}/")
-    fun pregunta_por_votacion(@Path("nro_votacion") nro_votacion: Int):
-            Call<List<PreguntaVotacion>>
+    fun pregunta_por_votacion(
+        @Path("nro_votacion") nro_votacion: Int
+    ): Call<List<PreguntaVotacion>>
 
     //Registrar opción de voto pregunta
 
@@ -54,6 +54,11 @@ interface ApiInterface {
         @Field("rechazo") rechazo: Int?,
         @Field("abstengo") abstengo: Int?
 
+    ): Call<List<RespuestaVotacionModel>>
+
+    @GET("/index.php/respuestas/{nro_votacion}/")
+    fun resultados(
+        @Path("nro_votacion") nro_votacion: Int
     ): Call<List<RespuestaVotacionModel>>
 
 

@@ -28,8 +28,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun capturaLogin(v:View){
-        val int = Intent(this, Resultados_parciales::class.java)
-        startActivity(int)
+        val intent = Intent(this, Resultados_parciales::class.java)
+        intent.putExtra("id", 32)
+        startActivity(intent)
     }
     fun capturaLogin2(v:View){
 
