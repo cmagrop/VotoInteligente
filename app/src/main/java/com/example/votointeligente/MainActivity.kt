@@ -1,27 +1,32 @@
 package com.example.votointeligente
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.HttpException
 import retrofit2.Response
 
 
-
 class MainActivity : AppCompatActivity() {
 
-    var loginList= ArrayList<UsuarioModel>();//crea un ArrayList con los datos de UsuarioModel
-    lateinit var usuario:EditText;
-    lateinit var passwrod:EditText;
-    lateinit var user:String;
-    lateinit var pass:String;
+    var loginList= ArrayList<UsuarioModel>()//crea un ArrayList con los datos de UsuarioModel
+    lateinit var usuario:EditText
+    lateinit var passwrod:EditText
+    lateinit var user:String
+    lateinit var pass:String
+    lateinit var validacion: String
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        var context: Context = this
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.login)
@@ -29,12 +34,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun capturaLogin(v:View){
-        val intent = Intent(this, Resultados_parciales::class.java)
+        val intent = Intent(this, Resultados::class.java)
         intent.putExtra("id", 32)
         startActivity(intent)
     }
+
     fun capturaLogin2(v:View){
 
+        lateinit var intent :Intent
         //creacion de objeto usuario y conexion(?) con el campo en el xml
         usuario=findViewById<EditText>(R.id.login_edt_usuario)
         passwrod=findViewById<EditText>(R.id.login_edt_pass)
@@ -53,6 +60,18 @@ class MainActivity : AppCompatActivity() {
 
 
         Data()
+       if(validacion=="1")
+        acceder()
+
+
+    }
+
+    private fun acceder()
+    {
+        intent = Intent(this@MainActivity, PerfilActivity::class.java)
+        intent.putExtra("parametro", "string")
+        startActivity(intent)
+
     }
 
     private fun Data() {
@@ -77,6 +96,20 @@ class MainActivity : AppCompatActivity() {
                     val exception: HttpException = HttpException(response)
                     println(exception.code())
 
+                  if(response.code()==401)
+                 {
+                    println("Error 401")
+
+                 }
+
+                 else {
+                     validacion  = "1"
+
+                 }
+
+
+
+
 
                 }
             }
@@ -84,4 +117,6 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+
 }

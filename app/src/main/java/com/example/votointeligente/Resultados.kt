@@ -15,13 +15,13 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class Resultados_parciales : AppCompatActivity() {
+class Resultados : AppCompatActivity() {
     var resultados= ArrayList<RespuestaVotacionModel>()//crea un ArrayList con los datos de UsuarioModel
     var dato : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_resultados_parciales)
+        setContentView(R.layout.activity_resultados)
 
         dato = savedInstanceState!!.getInt("id")
 
