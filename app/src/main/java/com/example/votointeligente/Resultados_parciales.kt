@@ -34,11 +34,11 @@ class Resultados_parciales : AppCompatActivity() {
         val grafico : PieChart = findViewById(R.id.grafico)
         var lista = ArrayList<PieEntry>()
 
-        lista.add(PieEntry(530.toFloat(), "apruebo"))
-        lista.add(PieEntry(429.toFloat(), "rechazo"))
-        lista.add(PieEntry(125.toFloat(), "blanco"))
-        lista.add(PieEntry(232.toFloat(), "nulo"))
-        lista.add(PieEntry(20.toFloat(), "abstengo"))
+        lista.add(PieEntry(resultados.get(0).apruebo.toFloat(), "apruebo"))
+        lista.add(PieEntry(resultados.get(0).rechazo.toFloat(), "rechazo"))
+        lista.add(PieEntry(resultados.get(0).blanco.toFloat(), "blanco"))
+        lista.add(PieEntry(resultados.get(0).nulo.toFloat(), "nulo"))
+        lista.add(PieEntry(resultados.get(0).abstengo.toFloat(), "abstengo"))
 
         val colors = ArrayList<Int>()
         for (c in ColorTemplate.COLORFUL_COLORS) colors.add(c)
